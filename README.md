@@ -2,6 +2,18 @@
 
 ## Development
 
+### Setup
+```sh:
+$ npm run setup
 ```
-$ electron .
+### Compile source code
+
+```sh:
+$ npm run compile
+```
+
+### Run
+
+```
+$ npm run start
 ```
