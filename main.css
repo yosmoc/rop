@@ -1,8 +1,12 @@
-#file-drag-area {
+#dropbox {
   min-height: 170px;
   padding-bottom: 10px;
   background: #eee;
   border: none;
   text-align: center;
+}
 
+#dropbox.hover {
+  border: 4px dashed #999;
+  color: #eee;
 }

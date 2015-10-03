@@ -3,14 +3,56 @@
   <head>
     <title>Hello, world!</title>
     <link rel="stylesheet" href="main.css">
+    <script>
+      function handleFiles(files) {
+        var fileList = files;
+        for (var i = 0, n = fileList.length; i < n; i++) {
+          var fileURL = window.URL.createObjectURL(fileList[i]);
+          document.getElementById("list").innerHTML = fileList[i].name;
+        }
+      }
+    </script>
   </head>
   <body>
-    <div id="file-drag-area">
+    <div id="dropbox" class>
       <p>drop the file here</p>
       <p>or</p>
-      <div class="btn">
-        <input type="file" multiple="multiple">
-      </div>
     </div>
+    <div class="btn">
+      <input type="file" id="input" multiple accept=".pdf" onchange="handleFiles(this.files)">
+    </div>
+
+    <output id="list"></output>
+    <script>
+      document.ondragover = document.ondrop = function(e) {
+        e.preventDefault();
+        return false;
+      }
+
+      var dropbox = document.getElementById("dropbox");
+      dropbox.ondragover = function(e) {
+        this.className = 'hover';
+        return false;
+      }
+
+      dropbox.ondragleave = dropbox.ondragend = function () {
+        this.className ='';
+        return false;
+      }
+
+      dropbox.ondrop = function (e) {
+        this.className = '';
+        var dt = e.dataTransfer;
+        var files = [];
+        for (var i = 0, n = dt.files.length; i < n; i++) {
+          if (dt.files[i].type.match('application/pdf')) {
+            files.push(dt.files[i]);
+          } else {
+            console.log("This file is not pdf file.");
+          }
+        }
+        handleFiles(files);
+      }
+    </script>
   </body>
 </html>
