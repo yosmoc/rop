@@ -29,5 +29,5 @@ gulp.task('compile-css', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/**/*.js', ['compile']);
+    gulp.watch('src/**/*', ['compile']);
 });
