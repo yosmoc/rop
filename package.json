@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "rotate PDF file",
   "main": "app/main.js",
+    "start": "electron .",
   "author": "samurai20000 <samurai20000@gmail.com>(http://github.com/samurai20000)",
   "license": "MIT"
 }
