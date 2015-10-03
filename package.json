@@ -2,7 +2,7 @@
   "name": "rop",
   "version": "0.0.1",
   "description": "rotate PDF file",
-  "main": "main.js",
+  "main": "app/main.js",
   "author": "samurai20000 <samurai20000@gmail.com>(http://github.com/samurai20000)",
   "license": "MIT"
 }
