@@ -3,12 +3,17 @@
   <head>
     <title>Hello, world!</title>
     <link rel="stylesheet" href="main.css">
+    <script src="rotatepdf.js"></<script>
+    </script>
     <script>
       function handleFiles(files) {
         var fileList = files;
         for (var i = 0, n = fileList.length; i < n; i++) {
           var fileURL = window.URL.createObjectURL(fileList[i]);
           document.getElementById("list").innerHTML = fileList[i].name;
+          var rotatepdf = new Rotatepdf(fileList[i], 90);
+          console.log(rotatepdf);
+          rotatepdf.run();
         }
       }
     </script>
