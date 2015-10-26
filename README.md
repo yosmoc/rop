@@ -1,5 +1,8 @@
 # ROP - Rotate PDF file
 
+## Dependences
+- pdftk
+
 ## Development
 
 ### Setup
