@@ -23,4 +23,4 @@ $ npm run start
 
 ### TODO
 
-- [ ] pdftkがEl capitanで動かない
+- [X] pdftkがEl capitanで動かない
