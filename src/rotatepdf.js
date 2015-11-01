@@ -8,7 +8,6 @@ class Rotatepdf {
 
   run() {
     var command = `pdftk ${this.inputFile.path} cat 1-endeast output ${this.inputFile.path}.pdf`
-    console.log(command);
     var cp = require('child_process');
     cp.exec(command, {timeout: 1000}, function(error, stdout, stderr) {
     if(stdout){
