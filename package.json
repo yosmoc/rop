@@ -9,6 +9,7 @@
     "setup": "npm install",
     "watch": "gulp watch"
   },
+  "repository": "samurai20000/rop",
   "author": "samurai20000 <samurai20000@gmail.com>(http://github.com/samurai20000)",
   "license": "MIT",
   "devDependencies": {
