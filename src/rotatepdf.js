@@ -6,8 +6,24 @@ class Rotatepdf {
     this.angle = angle;
   }
 
+  execute_command() {
+    var angle_option = '';
+
+    if (this.angle == 0) {
+      angle_option = '1-endnorth'
+    } else if (this.angle == 90) {
+      angle_option = '1-endeast'
+    } else if (this.angle == 180) {
+      angle_option = '1-endsouth'
+    } else if (this.angle == 270) {
+      angle_option = '1-endwest'
+    }
+
+    return `pdftk ${this.inputFile.path} cat ${angle_option} output ${this.inputFile.path}${this.angle}.pdf`
+  }
+
   run() {
-    var command = `pdftk ${this.inputFile.path} cat 1-endeast output ${this.inputFile.path}.pdf`
+    var command = this.execute_command();
     var cp = require('child_process');
     cp.exec(command, {timeout: 1000}, function(error, stdout, stderr) {
       if(stdout){
