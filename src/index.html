@@ -11,7 +11,8 @@
         for (var i = 0, n = fileList.length; i < n; i++) {
           var fileURL = window.URL.createObjectURL(fileList[i]);
           document.getElementById("list").innerHTML = fileList[i].name;
-          var rotatepdf = new Rotatepdf(fileList[i], 90);
+          var angle = Number(document.forms.angle.rotate.value);
+          var rotatepdf = new Rotatepdf(fileList[i], angle);
           console.log(rotatepdf);
           rotatepdf.run();
         }
@@ -23,6 +24,15 @@
       <p>drop the file here</p>
       <p>or</p>
     </div>
+
+    <form id="angle">
+      <label>Rotation angle</label>
+      <input type="radio" name="rotate" value="0"> 0
+      <input type="radio" name="rotate" value="90" checked> 90
+      <input type="radio" name="rotate" value="180"> 180
+      <input type="radio" name="rotate" value="270"> 270
+    </form>
+
     <div class="btn">
       <input type="file" id="input" multiple accept=".pdf" onchange="handleFiles(this.files)">
     </div>
