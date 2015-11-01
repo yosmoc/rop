@@ -13,6 +13,8 @@
   "author": "samurai20000 <samurai20000@gmail.com>(http://github.com/samurai20000)",
   "license": "MIT",
   "devDependencies": {
+    "electron-packager": "^5.0.2",
+    "electron-prebuilt": "^0.30.6",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
     "gulp-plumber": "^1.0.1",
