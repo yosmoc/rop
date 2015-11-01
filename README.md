@@ -20,7 +20,3 @@ $ npm run compile
 ```
 $ npm run start
 ```
-
-### TODO
-
-- [X] pdftkがEl capitanで動かない
